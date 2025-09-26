@@ -1,0 +1,16 @@
+#1
+
+procedure bubbleSort(A : list of sortable items)
+    n := length(A)                                                  C[1] * 1
+    repeat                                                          C[2] * n
+        swapped := false                                            C[3]
+        for i := 1 to n-1 inclusive do                              C[4] + (sum(i=1, n-1, ti)
+            { if this pair is out of order }
+            if A[i-1] > A[i] then                                   C[5] + (sum(i=1, n-1, ti) - 1)
+                { swap them and remember something changed }        C[6]
+                swap(A[i-1], A[i])                                  C[7] * ?
+                swapped := true                                     C[8] * ?
+            end if
+        end for
+    until not swapped                                               C[9]?
+end procedure

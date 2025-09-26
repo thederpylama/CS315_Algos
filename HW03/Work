@@ -3,8 +3,8 @@
 procedure bubbleSort(A : list of sortable items)
     n := length(A)                                                  C[1] * 1
     repeat                                                          C[2] * n
-        swapped := false                                            C[3]
-        for i := 1 to n-1 inclusive do                              C[4] + (sum(i=1, n-1, ti)
+        swapped := false                                            C[3] * 1
+        for i := 1 to n-1 inclusive do                              C[4] + (sum(i=1, n-1, ti))
             { if this pair is out of order }
             if A[i-1] > A[i] then                                   C[5] + (sum(i=1, n-1, ti) - 1)
                 { swap them and remember something changed }        C[6]
@@ -14,3 +14,50 @@ procedure bubbleSort(A : list of sortable items)
         end for
     until not swapped                                               C[9]?
 end procedure
+
+sum(i=1, n-1, ti) = n + (n - 1) + (n - 2) + (n - 3) + ... + 2
+(n + (n - 1) + (n - 2) + (n - 3) + ... + 2) + 2 drop the constants
+= n(n + 1)/2 = n^2 + n / 2 = theta(n^2)
+
+#2
+
+n^2 + 14 is O(n^2)
+
+0 <= n^2 + 14 <= C * n^2
+    / n^2       / n^2
+    14/n^2 <= C
+    n = 4 C = 1
+    14/(4)^2
+    = 0.875 < 1
+
+#3
+
+n^2 + 14 is Omega(n^2)
+
+0 <= n^2 * C + 14C <= n^2
+    / n^2              / n^2
+    C + 14C/n^2 <= 1
+    n = 4 C = 1
+    1 + (14 * 1)/(4)^2
+    = 0.9375 < 1
+
+#4
+
+Yes, because a function is defined as tightly bound by the function f(x) when its upper and lower bounds are also f(x).
+
+#5
+
+In this case "at least" means that in a best case scenario the algorithm has a running time of O(n^2).
+
+#6
+
+is 2^(n+1) O(2^n) ?
+
+0 <= 2^(n+1) <= C * 2 ^ n
+    lg(2^(n+1))       lg(C * 2 ^ n)
+    n + 1 <= lg(C) + n
+    -n             -n
+    1 <= lg(C)
+    C = 2
+    lg(2)
+    = 1 >= 1
